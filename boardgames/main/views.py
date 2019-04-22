@@ -31,3 +31,13 @@ def person(request):
         form = PersonForm()
 
     return render(request, 'main/contact_form.html', {'form': form})
+
+def persons(request):
+    persoane = Person.objects.all()
+    return render(request, 'main/lista_persoane.html', {'persoane': persoane})
+
+# def deleteperson(request, id):
+#     persoana = Person.objects.get(id=id)
+#     persoana.delete()
+#     persoane = Person.objects.all()
+#     return render(request, 'main/lista_persoane.html', {'persoane': persoane})

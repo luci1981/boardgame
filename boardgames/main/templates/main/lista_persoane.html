@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Lista Persoane</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Persoane inregistrate</h2>
+        <table>
+            <tr align="center">
+                <td><h5>Nume</h5></td>
+                <td><h5>Phonenumber</h5></td>
+                <td><h5>Mail</h5></td>
+                <td colspan="2"><h5>Actiuni</h5></td>
+            </tr>
+            {% for pers in persoane %}
+               <tr align="center">
+                   <td> {{ pers.nume }} </td>
+                   <td> {{ pers.phonenumber }} </td>
+                   <td> {{ pers.mail }} </td>
+                   <td> {{ pers.id }} </td>
+                   <!--<td><a href="{% url 'main:persons' %}" class="btn btn-secondary">Edit</a></td>-->
+                   
+               </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
