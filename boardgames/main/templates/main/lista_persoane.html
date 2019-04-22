@@ -21,7 +21,8 @@
                    <td> {{ pers.phonenumber }} </td>
                    <td> {{ pers.mail }} </td>
                    <td> {{ pers.id }} </td>
-                   <td><a href="deleteperson/{{pers.id}}">Delete</a></td>
+                   <!--<td><a href="deleteperson/{{pers.id}}">Delete</a></td>-->
+                   <td><a href="{% url 'main:deleteperson' pers.id %}">Delete</a></td>
 
                </tr>
             {% endfor %}
