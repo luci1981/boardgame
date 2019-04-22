@@ -15,13 +15,13 @@
                 <td><h5>Mail</h5></td>
                 <td colspan="2"><h5>Actiuni</h5></td>
             </tr>
-            {% for pers in persoane %}
+            {% for pers in persons %}
                <tr align="center">
                    <td> {{ pers.nume }} </td>
                    <td> {{ pers.phonenumber }} </td>
                    <td> {{ pers.mail }} </td>
                    <td> {{ pers.id }} </td>
-                   <!--<td><a href="{% url 'main:persons' %}" class="btn btn-secondary">Edit</a></td>-->
+                   <td><a href="deleteperson/{{pers.id}}">Delete</a></td>
 
                </tr>
             {% endfor %}

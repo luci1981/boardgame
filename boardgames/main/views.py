@@ -33,11 +33,14 @@ def person(request):
     return render(request, 'main/contact_form.html', {'form': form})
 
 def persons(request):
-    persoane = Person.objects.all()
-    return render(request, 'main/lista_persoane.html', {'persoane': persoane})
+    persons = Person.objects.all()
+    return render(request, 'main/lista_persoane.html', {'persons': persons})
 
-# def deleteperson(request, id):
-#     persoana = Person.objects.get(id=id)
-#     persoana.delete()
-#     persoane = Person.objects.all()
-#     return render(request, 'main/lista_persoane.html', {'persoane': persoane})
+def deleteperson(request, id):
+    #if request.method == 'GET':
+    print(id)
+    print(Person.objects.all())
+    Person.objects.all().filter(pk=int(id)).delete()
+    print(Person.objects.all())
+    persons = Person.objects.all()
+    return render(request, 'main/lista_persoane.html', {'persons': persons})
