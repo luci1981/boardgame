@@ -10,5 +10,5 @@ urlpatterns = [
     path('person/', views.person, name='person'),
     path('persons/', views.persons, name='persons'),
     # path('deleteperson/<int:id>/', views.deleteperson, name='deleteperson'),
-    re_path(r'deleteperson/(?P<id>\d+)/$', views.deleteperson, name='deleteperson'),
+    re_path(r'deleteperson/<int:id>/$', views.deleteperson, name='deleteperson'),
 ]
